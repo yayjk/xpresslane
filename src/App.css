@@ -1,38 +1,164 @@
+@import url("https://fonts.googleapis.com/css?family=Lato&display=swap");
+
+* {
+  font-family: Lato;
+}
+
 .App {
+  background: #f2f2f2;
+  padding: 16px;
+  min-height: calc(100vh - 32px);
+}
+
+.App > header {
+  padding: 16px;
+}
+
+#wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#brief {
+  background: #f57531;
+  border-radius: 3px 3px 0 0;
+  width: 50%;
+  color: white;
+  padding: 16px;
+  box-sizing: border-box;
+}
+
+#mainBox {
+  background-color: white;
+  width: 50%;
+  box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.12);
+  border-radius: 0 0 3px 3px;
+}
+
+#mainBox > header {
+  display: grid;
+  grid-template-columns: 15% 35% 35% 15%;
+  background: rgba(245, 117, 49, 0.08);
+  padding: 16px;
+  border-bottom: 1px solid #e6eaf7;
+}
+
+#mainBox > header > div {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.room {
+  display: grid;
+  grid-template-columns: 15% 35% 35% 15%;
+  padding: 16px;
+  border-bottom: 1px solid #e6eaf7;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.room > * {
+  margin: 0 4px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.index,
+.delete {
+  grid-row: span 3;
   display: flex;
-  flex-direction: column;
   align-items: center;
+}
+
+.delete > .Btn {
+  width: 100%;
+}
+
+.children,
+.adults {
+  background: #ffffff;
+  border: 1px solid #e6eaf7;
+  box-sizing: border-box;
+  border-radius: 3px;
+  display: flex;
+  justify-content: space-between;
+  padding: 8px;
+}
+
+.children > span,
+.adults > span {
+  display: flex;
+  align-items: center;
+}
+
+.Btn {
+  background-color: white;
+  border: 0;
+  font-size: 30px;
+  color: #f57531;
+}
+
+.mBtn {
+  color: lightgrey;
+}
+
+.Btn:disabled {
+  color: #e6eaf7;
+}
+
+.childrensAge {
+  grid-column: 2/4;
+  display: flex;
+  margin: 8px 0;
+  background: #fef4ef;
+  border: 1px solid #fef4ef;
+  box-sizing: border-box;
+  border-radius: 3px;
+}
+
+.childrensAge > section {
+  width: 50%;
+  margin: 0 4px;
+}
+
+.childrensAge > section:first-child {
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+}
+
+.childrensAge > section > .children {
+  margin: 8px;
+}
+
+#mainActions {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+#mainActions > button {
+  margin: 8px;
+  width: calc(50% - 24px);
+  padding: 16px;
+  font-size: 14px;
+}
+
+#mainActions > button:first-child {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 17px;
+  color: #f57531;
+  background-color: white;
+  border: 0;
+}
+
+#done {
+  background: #f57531;
+  border-radius: 3px;
   color: white;
+  border: 0;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.move {
+  position: relative;
+  left: 150%;
+  top: 100%;
 }
